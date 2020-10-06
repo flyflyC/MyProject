@@ -13,11 +13,16 @@
 
 <div class="container">
     <div class="row clearfix">
-        <div class="col-md-12 column">
+        <div class="col-md-8 column">
             <div class="page-header">
                 <h1>
                     <small>用户列表 —— 显示所有用户</small>
                 </h1>
+            </div>
+        </div>
+        <div class="col-md-4 column">
+            <div class="page-header">
+                    <h3><a>用户名：[[${session.loginUser}]]</a></h3>
             </div>
         </div>
     </div>
@@ -28,7 +33,6 @@
         </div>
         <div class="col-md-4 column">
             <p style="color: red" th:text="${msg}" th:if="${not #strings.isEmpty(msg)}"></p>
-            <h3><a>用户名：[[${session.loginUser}]]</a></h3>
         </div>
         <div class="col-md-4 column">
             <form method="post" class="form-inline" th:action="@{/user/queryUserByName}"
@@ -66,9 +70,9 @@
                 <tr align="center">
                     <td colspan="5">
                         <a th:href="@{/user/pageAllUser/}+${minPage}">首页</a>
-                        <a th:href="@{/user/pageAllUser/}+${pageNo-1}">上一页</a>
+                        <a th:href="@{/user/pageAllUser/}+${pageNo-1}" >上一页</a>
                         <span><span th:text="${pageNo}">&nbsp;</span>/&nbsp;<span th:text="${maxPage}"></span></span>
-                        <a th:href="@{/user/pageAllUser/}+${pageNo+1}">下一页</a>
+                        <a th:href="@{/user/pageAllUser/}+${pageNo+1}" >下一页</a>
                         <a th:href="@{/user/pageAllUser/}+${maxPage}">尾页</a>
                     </td>
                 </tr>
@@ -76,6 +80,5 @@
         </div>
     </div>
 </div>
-
 </body>
 </html>
