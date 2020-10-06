@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>登录</title>
+    <link th:href="@{/image/music.png}" rel="shortcut icon" type="image/x-icon">
+    <link type="text/css" rel="stylesheet" th:href="@{/bootstrap3.1.1/css/bootstrap.min.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/public.css}">
+</head>
+<body>
+<div class="show">
+    <h3 class="title" th:text="#{login.title}">听音悦-用户中心</h3>
+    <div class="login-panel">
+        <h4 class="form-title" th:text="#{login.tip}">登录&nbsp;听音悦账号</h4>
+        <p style="color: red" th:text="${msg}" th:if="${not #strings.isEmpty(msg)}"></p>
+        <hr class="top-line">
+        <form th:action="@{/user/loginPage}" method="post" name="form-login">
+            <div class="form-group">
+                <label for="user_name" th:text="#{login.username}">邮箱/用户名</label>
+                <input type="text" class="form-control inp-use" id="user_name" name="user_name" th:placeholder="#{login.username}">
+                <span class="span-ver" id="span-use"></span>
+            </div>
+            <div class="form-group form-ver">
+                <label for="user_name" th:text="#{login.password}">密码</label>
+                <input type="password" class="form-control inp-pas" id="user_password" name="user_password" th:placeholder="#{login.password}">
+                <span class="span-ver" id="span-pas"></span>
+            </div>
+            <div class="form-group form-ver">
+                <label for="vcode">验证码</label>
+                <div class="row">
+                    <div class="col-md-6 col-sm-6 col-xs-6" id="vcode-panel">
+                        <input type="text" class="form-control" id="vcode" name="vercode">
+                    </div>
+                    <img id="refresh_vcode" th:src="@{/user/validate}"
+                         class="col-md-6 col-sm-6 col-xs-6 vcode">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <button type="submit" class="btn btn-info" id="submit" >[[#{login.btn}]]</button>
+            </div>
+
+            <div class="order">
+                <span class="line"></span>
+                <span class="txt">第三方账号登录</span>
+                <span class="line"></span>
+            </div>
+            <div class="row">
+                <button class="col-md-5 col-sm-5 col-xs-5 btn-login left">QQ</button>
+                <span class="col-md-2 col-sm-2 col-xs-2"></span>
+                <button class="col-md-5 col-sm-5 col-xs-5 btn-login right">微信</button>
+            </div>
+        </form>
+    </div>
+
+    <div class="switch row">
+        <a th:href="@{regist.html}">
+            <button class="switch-action" id="register" >还没有账号<span>立即注册</span></button>
+        </a>
+    </div>
+
+    <div class="bottom-info">
+        Powered By：<a href="#">派𠂇、星</a>&nbsp;•&nbsp;<a href="#">关于我们</a>
+        <!-- 这里传入参数不需要使用 ？使用 （key=value）-->
+        <a class="btn btn-sm" th:href="@{/login.html(l='zh_CN')}">中文</a>
+        <a class="btn btn-sm" th:href="@{/login.html(l='en_US')}">English</a>
+    </div>
+</div>
+<!--<script>
+    $('#test').validate({
+        submitHandler: function () {
+            denglu($('#test').attr("action"), $('#test').serialize());
+
+        }
+    });
+</script>-->
+<script th:src="@{/js/jquery-3.3.1.min.js}"></script>
+<script th:src="@{/js/login.js}"></script>
+<script th:src="@{https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js}"></script>
+</body>
+<script th:src="@{/js/jquery.min.js}"></script>
+<!--动态背景 格式验证-->
+<script th:src="@{/js/jquery.gradientify.min.js}"></script>
+<script th:src="@{/js/reglogstylevalidation.js}"></script>
+</html>

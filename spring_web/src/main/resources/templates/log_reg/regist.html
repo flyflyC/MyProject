@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>注册</title>
+    <link href="../../static/image/music.png" rel="shortcut icon" type="image/x-icon">
+    <link type="text/css" rel="stylesheet" href="../../static/bootstrap3.1.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../../static/css/public.css">
+</head>
+<body>
+<div class="show">
+    <h3 class="title">嘿呀音乐-用户中心</h3>
+    <div class="login-panel">
+        <h4 class="form-title">注册&nbsp;嘿呀音乐账号</h4>
+        <hr class="top-line">
+        <form name="form-register" action="/templates/user/addOrEditUser" method="post">
+            <div class="form-group">
+                <label for="username">用户名</label>
+                <input type="text" class="form-control inp-use" id="username" name="user_name">
+                <span class="span-ver" id="span-use"></span>
+            </div>
+<!--            <div class="form-group">-->
+<!--                <label for="email">邮箱</label>-->
+<!--                <input type="email" class="form-control" id="email">-->
+<!--                <span class="span-ver" id="span-ema"></span>-->
+<!--            </div>-->
+            <div class="form-group">
+                <label for="password">密码</label>
+                <input type="password" class="form-control inp-pas" id="password" name="user_password">
+                <span class="span-ver" id="span-pas"></span>
+            </div>
+            <div class="form-group">
+                <label for="vcode">验证码</label>
+                <div class="row">
+                    <div class="col-md-6 col-sm-6 col-xs-6" id="vcode-panel">
+                        <input type="text" class="form-control" id="vcode">
+                    </div>
+                    <img id="refresh_vcode" src="/templates/user/validate"
+                         class="col-md-6 col-sm-6 col-xs-6 vcode">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <button type="submit" class="btn btn-info" id="submit">注册</button>
+            </div>
+
+            <div class="order">
+                <span class="line"></span>
+                <span class="txt">第三方账号登录</span>
+                <span class="line"></span>
+            </div>
+            <div class="row">
+                <button class="col-md-5 col-sm-5 col-xs-5 btn-login left">QQ</button>
+                <span class="col-md-2 col-sm-2 col-xs-2"></span>
+                <button class="col-md-5 col-sm-5 col-xs-5 btn-login right">微信</button>
+            </div>
+        </form>
+    </div>
+
+    <div class="switch row">
+        <a href="login.html">
+            <button class="switch-action" id="login">已经注册过账号？<span>立即登录</span></button>
+        </a>
+    </div>
+
+    <div class="bottom-info">
+        Powered By：<a href="#">派𠂇、星</a>&nbsp;•&nbsp;<a href="#">关于我们</a>
+    </div>
+</div>
+
+<script src="../../static/js/jquery-3.3.1.min.js"></script>
+<script src="../../static/js/login.js"></script>
+<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+<script src="../../static/js/jquery.min.js"></script>
+<!--动态背景 格式验证-->
+<script src="../../static/js/jquery.gradientify.min.js"></script>
+<script src="../../static/js/reglogstylevalidation.js"></script>
+<script>
+    $(document).ready();
+</script>
+</html>
