@@ -32,7 +32,6 @@ public class emailConfig {
         //组装
         MimeMessageHelper helper = new MimeMessageHelper(mimeMessage, true);
         //正文
-
         helper.setSubject("Hello 李哥");
         helper.setText("<p style='color:red'>这是一个邮件任务测试的加强版</p>",true);
         //附件
